@@ -30,7 +30,7 @@ const Home = () => {
          idx={22} />
         </h1>
         <h2>Hardware IoT Developer</h2>
-        <Link to="/contact" className="flat-button">Contact Me</Link>
+        <Link to="/Work" className="flat-button">View my work</Link>
       </div>
       <Logo />
     </div>

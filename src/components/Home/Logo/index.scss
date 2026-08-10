@@ -1,14 +1,40 @@
 .logo-container {
   width: 100%;
   max-width: 100%;
+  position: relative;
+  overflow: hidden;
+}
+
+.logo-container::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border: 1px dashed rgba(255, 255, 255, 0.2);
+  opacity: 0;
+  animation: sketchOutline 1.6s ease-out 0.3s forwards;
+  pointer-events: none;
+}
+
+.logo-container::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: linear-gradient(135deg, rgba(255,255,255,0.0) 0%, rgba(255,255,255,0.08) 50%, rgba(255,255,255,0.0) 100%);
+  background-size: 20px 20px;
+  opacity: 0;
+  pointer-events: none;
+  animation: pencilShade 1.8s ease-out 0.5s forwards;
 }
 
 .solid-logo {
   width: 100%;
   height: auto;
   display: block;
+  will-change: clip-path, transform, opacity;
+  animation: drawIllustration 3.2s cubic-bezier(0.33, 0.0, 0.25, 1) both;
 }
 
 .svg-logo {
   display: none;
 }
+
