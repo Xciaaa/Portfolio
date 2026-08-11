@@ -1,0 +1,35 @@
+.loading-screen {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  background: #000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: opacity 0.6s ease;
+
+  &--exiting {
+    opacity: 0;
+    pointer-events: none;
+  }
+}
+
+.loading-logo {
+  width: 120px;
+  height: auto;
+  animation: spinLoader 2.5s cubic-bezier(0.45, 0.05, 0.55, 0.95) forwards;
+}
+
+@keyframes spinLoader {
+  0% {
+    transform: rotate(0deg) scale(0.8);
+    opacity: 0;
+  }
+  20% {
+    opacity: 1;
+  }
+  100% {
+    transform: rotate(1080deg) scale(1);
+    opacity: 1;
+  }
+}
