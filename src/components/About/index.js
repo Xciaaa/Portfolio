@@ -108,7 +108,7 @@ const About = () => {
 
 
       <div ref={containerRef} className="about-scroll-container">
-        <h1 className='divider'> ___________________________________________________________________________________________________</h1>
+        <hr className='divider' /> 
         <h2 className='impact'> Hobbies </h2>
         <div className="about-scroll-sticky">
           <motion.div className="about-gallery" style={{ x }}>
