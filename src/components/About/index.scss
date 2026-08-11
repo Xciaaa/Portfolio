@@ -1,97 +1,90 @@
 /* ==========================================================================
-   Base Styles & Layout
+   Base Page & Layout
    ========================================================================== */
 .about-page {
+  width: 100%;
+  margin-top: 100px;
+  padding-top: 5rem !important; /* Pushes content down so title clears top edge/nav */
+  box-sizing: border-box;
   overflow: visible;
 }
 
+
+
 .about-container {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-  flex-wrap: wrap;
-  min-height: 80vh;
+  display: flex !important;
+  flex-direction: row !important;
+  justify-content: space-between !important;
+  align-items: center !important;
   width: 100%;
   max-width: 1200px;
   margin: 0 auto;
-  padding: 2rem;
+  padding: 10rem;
   box-sizing: border-box;
-  gap: 2rem;
+  gap: 1rem;
   position: relative;
-
-  &::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    right: 0;
-    width: 55%;
-    height: 100%;
-    opacity: 0.18;
-    pointer-events: none;
-    z-index: 0;
-  }
-}
-
-.about-content,
-.about-animation {
-  position: relative;
-  z-index: 1;
 }
 
 .about-content {
-  width: min(520px, 100%);
-  box-sizing: border-box;
+  order: 1 !important; 
+  flex: 1 1 50% !important;
+  max-width: 580px !important;
+  position: relative !important;
+  z-index: 2;
 
   h1 {
-    margin-bottom: 18px;
-  }
-
+ font-size: clamp(2.8rem, 5vw, 4rem);
+    font-weight: 700;
+    color: #ffd7ef; 
+    margin-top: 0;
+    margin-bottom: 1.5rem;
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    line-height: 1.1;
+    
   p {
-    line-height: 1.8;
-    max-width: 100%;
-    color: #ffffff;
-    word-wrap: break-word;
+    
+    font-size: clamp(1.4rem, 10vw, 1.25rem) !important;
+    line-height: 2;
+    letter-spacing: 0.2px;
+    width: 100%;
+    color: rgba(255, 255, 255, 0.92);
+    word-break: break-word;
     overflow-wrap: break-word;
+    padding-right: 2rem !important;
+    margin: 0;
+    }
+  } 
+}
+
+.text-animate-hover {
+  display: inline-block;
+  transition: color 0.25s ease;
+&:hover {
+    color: #ffffff !important; 
   }
 }
 
-/* ==========================================================================
-   Interactive Flip Card / Character Animation
-   ========================================================================== */
 .about-animation {
-  width: min(420px, 100%);
-  max-width: 480px;
-  min-height: 520px; /* Crucial: Keeps height when children are absolute */
-  overflow: visible;
-  margin-left: auto;
-  perspective: 1200px;
-  align-self: flex-start;
-  cursor: pointer;
-
-  &:hover .about-character {
-    transform: scale(1.03);
-    filter: drop-shadow(0 18px 40px rgba(0, 0, 0, 0.18));
-  }
-
-  &::after {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background-image: linear-gradient(
-      135deg,
-      rgba(255, 255, 255, 0) 0%,
-      rgba(255, 255, 255, 0.08) 50%,
-      rgba(255, 255, 255, 0) 100%
-    );
-    opacity: 0;
-    pointer-events: none;
-    animation: aboutPencilShade 3.2s ease-out 0.4s forwards;
-  }
+  order: 2 !important; /* Forces character card to sit on the right */
+  flex: 1 1 45% !important;
+  max-width: 420px !important;
+  width: 100% !important;
+  
+  /* Reset absolute offsets that were pulling it to the left */
+  position: relative !important;
+  top: auto !important;
+  left: auto !important;
+  right: auto !important;
+  transform: none !important;
+  margin: 0 !important;
+  z-index: 2;
 }
 
 .flip-card {
   width: 100%;
-  min-height: 520px;
+  aspect-ratio: 3 / 4;
   position: relative;
   transform-style: preserve-3d;
   transition: transform 0.8s ease;
@@ -104,6 +97,9 @@
     backface-visibility: hidden;
     position: absolute;
     inset: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
 
   &__front {
@@ -112,20 +108,29 @@
 
   &__back {
     transform: rotateY(180deg);
-    display: flex;
-    align-items: center;
-    justify-content: center;
   }
 }
 
 .about-back {
   width: 100%;
   height: auto;
+  max-height: 100%;
+  object-fit: contain;
   display: block;
 }
 
+
+.character-wrapper {
+  position: relative;
+  display: inline-block;
+  width: 100%;
+  max-width: 320px;
+  margin: 0 auto;
+}
+
 .about-character {
-  width: 75%;
+  width: 100%;
+  max-width: 320px;
   height: auto;
   display: block;
   margin: 0 auto;
@@ -137,9 +142,9 @@
 .about-ball {
   position: absolute;
   top: 0%;
-  left: 40px;
-  width: 100px;
-  max-width: 24%;
+  left: 12%;
+  width: 80px;
+  max-width: 20%;
   transform-origin: center center;
   transform-style: preserve-3d;
   backface-visibility: hidden;
@@ -150,7 +155,9 @@
   }
 }
 
-
+/* ==========================================================================
+   Hobbies & Outro Section
+   ========================================================================== */
 .impact {
   font-family: 'Coolvetica', sans-serif;
   color: #ff8da1;
@@ -158,8 +165,9 @@
   font-size: clamp(3rem, 8vw, 6rem);
   text-align: center;
   position: relative;
-  margin: 0 auto 2rem;
+  margin: 4rem auto 2rem;
   z-index: 10;
+  clear: both;
 }
 
 .divider {
@@ -305,105 +313,59 @@
   100% { transform: translateY(0) rotateY(360deg); }
 }
 
-@media (max-width: 1024px) {
-  .about-container {
-    padding: 1.5rem;
-  }
-
-  .about-scroll-container {
-    height: 250vh;
-  }
-
-  .about-gallery {
-    gap: 20px;
-    padding-inline: calc(50vw - 170px);
-  }
-
-  .about-gallery-item {
-    width: 340px;
-    height: 430px;
-  }
-}
-
+/* ==========================================================================
+   Responsive Breakpoints (Mobile & Tablet Stacking Fix)
+   ========================================================================== */
 @media (max-width: 900px) {
   .about-container {
-    flex-direction: column;
-    align-items: center;
-    justify-content: flex-start;
-    padding: 1.5rem 1rem;
-    gap: 2.5rem; 
-
-    &::before {
-      display: none;
-    }
+    flex-direction: column !important;
+    align-items: flex-start !important;
   }
 
   .about-content {
-    order: 1;
-    width: 100%;
-    max-width: 100%;
-    margin-bottom: 0;
+    order: 1 !important;
+    width: 100% !important;
+    max-width: 100% !important;
   }
 
   .about-animation {
-    order: 2;
-    width: 100%;
-    max-width: 300px;
-    min-height: 440px;
-    margin: 0 auto;
-    align-self: center;
+    order: 2 !important;
+    max-width: 280px !important;
+    margin: 1.5rem auto !important;
   }
+}
 
   .flip-card {
-    min-height: 440px;
+    width: 100% !important;
+    height: 100% !important;
+    min-height: 380px !important;
+    position: relative !important;
+
+    &__face {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    &__front {
+      z-index: 5 !important;
+      transform: translateZ(1px); /* Forces mobile GPU render layer so PNG displays */
+    }
+
+    &__back {
+      z-index: 4;
+    }
+  }
+
+  .about-character {
+    width: 100% !important;
+    max-width: 240px !important;
+    height: auto !important;
+    object-fit: contain;
   }
 
   .about-scroll-container {
     height: 280vh;
   }
-
-  .about-gallery-item {
-    width: 300px;
-    height: 400px;
-  }
-}
-
-/* Mobile Small Devices */
-@media (max-width: 600px) {
-  .about-container {
-    padding: 1rem;
-  }
-
-  .about-gallery {
-    gap: 15px;
-    padding-inline: 1rem;
-  }
-
-  .about-gallery-item {
-    width: 220px;
-    height: 300px;
-
-    h2 {
-      font-size: 20px;
-    }
-  }
-
-  .about-item-content {
-    bottom: 18px;
-    left: 16px;
-  }
-
-  .about-item-number {
-    font-size: 12px;
-  }
-
-  .about-scroll-finish {
-    padding: 1rem 1rem 4rem;
-  }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .about-gallery {
-    transform: none !important;
-  }
-}
