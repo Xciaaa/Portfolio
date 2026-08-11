@@ -1,13 +1,15 @@
 .about-container {
   display: flex;
-  justify-content: left;
-  align-items: center;
+  justify-content: flex-start;
+  align-items: flex-start;
+  flex-wrap: wrap;
   min-height: 80vh;
   width: 100%;
   max-width: 1200px;
   margin: 0 auto;
   padding: 2rem;
   box-sizing: border-box;
+  gap: 2rem;
 }
 
 .about-container::before {
@@ -35,32 +37,43 @@
   position: sticky;
   top: 0;
   height: 100vh;
-  width: 240%;
+  width: 205%;
   display: flex;
-   flex-direction: column;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
   overflow: hidden;
-  
 }
 
 .about-gallery {
   display: flex;
-  gap: 30px;
+  gap: 24px;
   will-change: transform;
-  padding: 0 2rem;
+  min-width: max-content;
+  margin: 0 calc(50vw - 160px);
+  padding: 0;
 }
 
 .about-gallery-item {
   flex-shrink: 0;
-  width: 400px;
-  height: 500px;
-  border-radius: 12px;
+  width: 320px;
+  height: 420px;
+  border-radius: 18px;
   position: relative;
   overflow: hidden;
   background-size: cover;
   background-position: center;
-  border: 4px solid transparent;
+  border: 4px solid rgba(255, 255, 255, 0.15);
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.18);
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+  cursor: pointer;
+}
+
+.about-gallery-item:hover,
+.about-gallery-item:focus-within {
+  transform: translateY(-12px) scale(1.03);
+  box-shadow: 0 26px 55px rgba(0, 0, 0, 0.28);
+  border-color: rgba(255, 255, 255, 0.28);
 }
 
 .about-gallery-item::before {
@@ -93,26 +106,150 @@
 }
 
 .about-scroll-outro {
-  height: 100vh;
+  min-height: 80vh;
   display: flex;
   justify-content: center;
   align-items: center;
+  padding: 3rem 1.5rem;
 }
 
 .about-scroll-finish {
-  font-size: clamp(48px, 8vw, 96px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.25rem;
+  max-width: 700px;
+  width: 100%;
   color: #ffffff;
+  margin: 0;
+  padding: 1.5rem;
+  text-align: center;
+}
+
+.about-scroll-finish p {
+  font-size: clamp(1.8rem, 3vw, 3.2rem);
+  line-height: 1.2;
   margin: 0;
 }
 
-@media (max-width: 600px) {
+.about-resume-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.95rem 1.75rem;
+  border: 2px solid #ff8da1;
+  color: #ffffff;
+  background: rgba(255, 138, 161, 0.12);
+  text-decoration: none;
+  font-size: 1rem;
+  font-weight: 600;
+  border-radius: 999px;
+  transition: background 0.25s ease, transform 0.25s ease, border-color 0.25s ease;
+}
+
+.about-resume-button:hover,
+.about-resume-button:focus-visible {
+  background: rgba(255, 138, 161, 0.28);
+  border-color: #ff8da1;
+  transform: translateY(-2px);
+}
+
+.about-resume-sprite {
+  margin-bottom: 1rem;
+  display: block;
+  max-width: 280px;
+  width: 100%;
+}
+
+@media (max-width: 1024px) {
+  .about-container {
+    padding: 1.5rem;
+  }
+
+  .about-scroll-container {
+    height: 250vh;
+  }
+
   .about-gallery {
-    gap: 15px;
+    gap: 20px;
+    padding: 0 calc(50vw - 170px);
   }
 
   .about-gallery-item {
-    width: 280px;
-    height: 350px;
+    width: 340px;
+    height: 430px;
+  }
+}
+
+@media (max-width: 860px) {
+  .about-container {
+    flex-direction: column;
+    padding: 1.5rem 1rem;
+  }
+
+  .about-animation {
+    width: 100%;
+    min-height: auto;
+    margin-left: 0;
+    max-width: 100%;
+  }
+
+  .about-content {
+    width: 100%;
+    padding-right: 0;
+  }
+
+  .about-container::before {
+    display: none;
+  }
+
+  .about-scroll-container {
+    height: 280vh;
+  }
+
+  .about-gallery-item {
+    width: 300px;
+    height: 400px;
+  }
+}
+
+@media (max-width: 600px) {
+  .about-container {
+    padding: 1rem;
+  }
+
+  .about-animation {
+    min-height: auto;
+  }
+
+  .about-gallery {
+    gap: 15px;
+    padding: 0 calc(50vw - 130px);
+  }
+
+  .about-gallery-item {
+    width: 260px;
+    height: 340px;
+  }
+
+  .about-item-content {
+    bottom: 20px;
+    left: 20px;
+  }
+
+  .about-item-number {
+    font-size: 12px;
+  }
+
+  .about-gallery-item h2 {
+    font-size: 22px;
+  }
+
+  .about-scroll-finish {
+    font-size: clamp(1.8rem, 7vw, 2.8rem);
+    padding: 0 1rem;
+    line-height: 1.2;
+    text-align: center;
   }
 }
 
@@ -248,16 +385,16 @@
 
 .impact {
   font-family: 'Coolvetica';
-  color: #FFFFFF;
+  color: #ff8da1;
   font-weight: 400;
-  font-size: 6rem;       
-  text-align: center; 
-   position: absolute;
-   top: 8%; 
-   left: 0;
-   width: 100vw;
-  margin: 0;    
-  width: 100vw;           
+  font-size: clamp(3rem, 8vw, 6rem);
+  text-align: center;
+  position: relative;
+  top: 3%;
+  left: auto;
+  width: auto;
+  max-width: 100vw;
+  margin: 0 auto 2rem;
   z-index: 10;
 }
 

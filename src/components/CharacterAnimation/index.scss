@@ -1,0 +1,23 @@
+.character-animation {
+  display: block;
+  background-repeat: no-repeat;
+  background-position: 0 0;
+  image-rendering: pixelated;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.25);
+}
+
+@keyframes charFadeIn {
+  0% { opacity: 0; transform: translateY(6px) scale(0.995); }
+  60% { opacity: 0.92; transform: translateY(0) scale(1.003); }
+  100% { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+.character-animation--small {
+  border-radius: 10px;
+}
+
+.character-animation:focus {
+  outline: 2px solid rgba(255,138,161,0.25);
+}

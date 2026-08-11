@@ -5,17 +5,39 @@ import './index.scss';
 import CharacterBase from '../../assets/images/noBall.png';
 import BallIcon from '../../assets/images/logo.png';
 import AboutMeImage from '../../assets/images/aboutme.png';
+import Photo from '../../assets/images/Picture.png';
+import digiArt from '../../assets/images/digitalArt.png';
+import OnlineGames from '../../assets/images/VALORANT.webp';
+import sport from '../../assets/images/badminton.png';
+import reading from '../../assets/images/reading.png';
+import CharacterAnimation from '../CharacterAnimation';
+import c1 from '../../assets/characterImages/1.png';
+import c2 from '../../assets/characterImages/2.png';
+import c3 from '../../assets/characterImages/3.png';
+import c4 from '../../assets/characterImages/4.png';
+import c5 from '../../assets/characterImages/5.png';
+import c6 from '../../assets/characterImages/6.png';
+import c7 from '../../assets/characterImages/7.png';
+import c8 from '../../assets/characterImages/8.png';
+import c9 from '../../assets/characterImages/9.png';
+import c10 from '../../assets/characterImages/10.png';
+import c11 from '../../assets/characterImages/11.png';
+import c12 from '../../assets/characterImages/12.png';
+import c13 from '../../assets/characterImages/13.png';
+import c14 from '../../assets/characterImages/14.png';
+
+const characterFrames = [c1,c2,c3,c4,c5,c6,c7,c8,c9,c10,c11,c12,c13,c14];
 
 const items = [
-  { id: 1,  label: 'Hobby 1', image: '/photos/tokyo-shinjuku-2/image-1.jpg' },
-  { id: 2,  label: 'Night Two', image: '/photos/tokyo-shinjuku-2/image-2.jpg' },
-  { id: 3,  label: 'Night Three', image: '/photos/tokyo-shinjuku-2/image-3.jpg' },
-  { id: 4,  label: 'Night Four', image: '/photos/tokyo-shinjuku-2/image-4.jpg' },
-  { id: 5,  label: 'Night Five', image: '/photos/tokyo-shinjuku-2/image-8.jpg' },
+  { id: 1, color: '#b4b4b4', label: 'Digital Art', image: digiArt },
+  { id: 2,  label: 'Taking Photos', image: Photo },
+  { id: 3,  label: 'Online Games', image: OnlineGames},
+  { id: 4,  label: 'Sports', image: sport },
+  { id: 5,  label: 'Reading', image: reading },
 ];
 
-const ITEM_WIDTH = 400;
-const GAP = 30;
+const ITEM_WIDTH = 320;
+const GAP = 24;
 
 
 const About = () => {
@@ -59,6 +81,7 @@ const About = () => {
             />
           </h1>
           <p>I'm Jerricson Garcia a computer engineer who loves bringing digital code into the physical world. I operate right at the intersection of hardware and software, whether that means wiring up microcontrollers, writing backend logic, or building clean web interfaces to control it all. I take a hands-on, end-to-end approach to engineering: taking an idea from raw schematics and low-level code to a smooth, fully functional system that just works. I’m always eager to solve complex problems and build tech that makes a tangible impact.</p>
+
         </div>
 
         <div
@@ -86,8 +109,8 @@ const About = () => {
 
       <div ref={containerRef} className="about-scroll-container">
         <h1 className='divider'> ___________________________________________________________________________________________________</h1>
+        <h2 className='impact'> Hobbies </h2>
         <div className="about-scroll-sticky">
-          <h2 className='impact'> Hobbies </h2>
           <motion.div className="about-gallery" style={{ x }}>
             {items.map((item) => (
               <div
@@ -109,7 +132,11 @@ const About = () => {
       </div>
 
       <section className="about-scroll-outro">
-        <p className="about-scroll-finish">Fin</p>
+        <div className="about-scroll-finish">
+          <CharacterAnimation frames={characterFrames} fps={4} transitionMs={420} scale={0.95} className="about-resume-sprite" />
+          <p>Want the full story? My resume has the complete breakdown of skills, projects, and experience.</p>
+          <a href="https://docs.google.com/document/d/1a54S1aY29NDwJHQm7V9xfxS94UsM6I2XaMNnYTzlNhI/export?format=pdf" className="about-resume-button" download>Download my resume</a>
+        </div>
       </section>
     </div>
   );
