@@ -5,11 +5,14 @@ import { useState } from 'react';
 import AnimatedLetters from '../AnimatedLetters';
 import Logo from './Logo';
 
+
 const Home = () => {
 
   const [letterClass] = useState('text-animate')
   const nameArray = [' ', 'X', 'i', 'a']
   const jobArray = ['C', 'o', 'm', 'p', 'u', 't', 'e', 'r', ' ', 'E', 'n', 'g', 'i', 'n', 'e', 'e', 'r']
+
+ 
 
   return (
     <div className="home-container">

@@ -8,7 +8,8 @@ body {
   sans-serif;
   color: #8E8E8E;
   background: #000000;
-  overflow: hidden;
+  overflow-x: hidden;
+  overflow-y: auto;
   display: block;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;

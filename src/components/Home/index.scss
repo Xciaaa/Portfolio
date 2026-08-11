@@ -8,10 +8,15 @@
 }
 
 .home-container {
-  position: relative;
-  min-height: 100vh;
-  padding: 0 10%;
-  overflow: hidden;
+  display: flex;
+  justify-content: left; 
+  align-items: center;     
+  min-height: 80vh;       
+  width: 100%;
+  max-width: 1200px;       
+  margin: 0 auto;          
+  padding: 2rem;
+  box-sizing: border-box;
 
   .home-content {
     position: relative;
@@ -34,10 +39,10 @@
   }
 
   h1 {
+    position: relative; 
     color: #FFF;
-    font-size: 60px;
-    margin-top:90px;
-    font-family: 'Coolvetica';
+    font-size: 40px;
+    font-family: 'Coolvetica', sans-serif;
     letter-spacing: 2px;
     font-weight: 400;
 
@@ -78,7 +83,7 @@
     font-weight: 400;
     font-family: 'Montserrat', sans-serif;
     letter-spacing: 5px;
-    margin-top: 16px;
+    margin-top: 40px;
     margin-bottom: 28px;
     animation: fadeIn 1s 1.8s backwards;
   }
@@ -92,10 +97,9 @@
     text-decoration: none;
     padding: 10px 18px;
     border: 1px solid #ff8da1;
-    margin-top: 10px;
-    float: left;
     animation: fadeIn 1s 1.9s backwards;
     white-space: nowrap;
+    display: inline-block;
 
     &:hover {
       background-color: #ff8da1;

@@ -4,6 +4,7 @@ import Layout from './components/Layout';
 import Home from './components/Home';
 import About from './components/About';
 import Contact from './components/Contact';
+import Work from './components/Work';
 
 
 
@@ -15,6 +16,7 @@ function App() {
       <Route index element={<Home />} />
       <Route path="/about" element={<About />}/>
       <Route path="/Contact" element={<Contact />}/>
+      <Route path="/Work" element={<Work />}/>
     </Route>
    </Routes>
    </>
