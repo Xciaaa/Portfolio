@@ -1,5 +1,5 @@
-import digiArt from '../../assets/images/digitalArt.png';
-import Photo from '../../assets/images/Picture.png';
+import digiArt from '../../assets/images/spd.png';
+import Photo from '../../assets/images/imsl.png';
 import OnlineGames from '../../assets/images/VALORANT.webp';
 
 const projects = [

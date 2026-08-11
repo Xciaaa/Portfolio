@@ -147,4 +147,27 @@
   }
 }
 
+@media (max-width: 720px) {
+  .nav-bar {
+    padding: 0 16px;
+    justify-content: flex-start;
+    height: 50px;
+  }
+
+  .nav-bar nav {
+    position: static;
+    transform: none;
+    left: auto;
+    margin-left: auto;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 12px;
+  }
+
+  .nav-bar ul {
+    display: none;
+  }
+}
+
   

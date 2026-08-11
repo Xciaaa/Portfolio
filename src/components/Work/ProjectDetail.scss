@@ -12,4 +12,14 @@
 .project-detail-block p { line-height: 1.75; color: rgba(255,255,255,0.8); }
 .project-detail-block ul { padding-left: 1.25rem; color: rgba(255,255,255,0.8); }
 .project-detail-block li { margin-bottom: 0.7rem; }
-@media (max-width: 860px) { .project-hero { grid-template-columns: 1fr; } }
+@media (max-width: 860px) { 
+  .project-hero { grid-template-columns: 1fr; }
+  .project-detail { padding-bottom: 5rem; }
+}
+
+@media (max-width: 600px) {
+  .project-detail { padding: 1.5rem 0.75rem 5rem; }
+  .project-hero { gap: 1rem; }
+  .project-copy h1 { font-size: clamp(2.2rem, 12vw, 3rem); }
+  .project-description { max-width: none; }
+}

@@ -44,6 +44,17 @@
   animation-delay: 1s;
 }
 
+@media (max-width: 860px) {
+  .page { position: relative; }
+  .top-tags, .bottom-tags { position: static; left: auto; top: auto; bottom: auto; margin: 0.5rem 1rem; }
+  .container { top: 0; min-height: auto; padding-bottom: 5rem; }
+}
+
+@media (max-width: 600px) {
+  .top-tags, .bottom-tags { margin: 0.3rem 0.75rem; font-size: 18px; }
+  .container { padding-bottom: 5rem; }
+}
+
 .about-container {
   .about-content {
     position:absolute;

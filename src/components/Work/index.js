@@ -1,14 +1,14 @@
 import './index.scss';
 import { Link } from 'react-router-dom';
-import digiArt from '../../assets/images/digitalArt.png';
-import Photo from '../../assets/images/Picture.png';
+import digiArt from '../../assets/images/spd.png';
+import Photo from '../../assets/images/imsl.png';
 import OnlineGames from '../../assets/images/VALORANT.webp';
 
 const Work = () => {
   return (
     <div className="work-page">
       <header className="work-hero">
-        <h1 className="work-title">WORK <span className="sep">{'//'}</span> PROJECTS</h1>
+        <h1 className="work-title">WORK <span className="sep">{'//'}</span> <span className='proj'>PROJECTS</span></h1>
         <p className="work-sub">A curated collection — choose a view to explore hardware or software outputs.</p>
       </header>
 

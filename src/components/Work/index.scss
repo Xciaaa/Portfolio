@@ -1,6 +1,6 @@
 /* Work page styles */
 .work-page {
-  padding: 3rem 2rem;
+  padding: 3rem 2rem 5rem;
   max-width: 1200px;
   margin: 0 auto;
   color: #ffffff;
@@ -11,13 +11,20 @@
   margin-bottom: 2.5rem;
 }
 
+.work-main {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
 .work-title {
   font-family: 'Coolvetica', sans-serif;
   font-size: clamp(3.2rem, 6vw, 5.2rem);
-  color: #ffffff;
+  color: #b4b4b4;
   margin: 0 0 0.6rem;
 }
-.work-title .sep { color: #ff8da1; }
+.work-title .sep { color: #FFFFFF; }
+.work-title .proj {color :#ff8da1; }
 
 .work-sub { color: rgba(255,255,255,0.6); margin: 0 0 1.5rem; }
 
@@ -41,7 +48,7 @@
 .work-tile:hover { transform: translateY(-8px); box-shadow: 0 18px 40px rgba(0,0,0,0.35); }
 
 .work-tile.hardware .tile-inner h3 { color: #ffb3c2; }
-.work-tile.software .tile-inner h3 { color: #9fe6ff; }
+.work-tile.software .tile-inner h3 { color: #b4b4b4; }
 
 .tile-inner h3 { margin: 0 0 0.5rem; font-size: 1.6rem; }
 .tile-inner p { margin: 0 0 1.25rem; color: rgba(255,255,255,0.7); }
@@ -57,6 +64,23 @@
 .card-body small { color: rgba(255,255,255,0.6); }
 
 @media (max-width: 860px) {
+  .work-page { padding: 2rem 1rem 5rem; }
+  .work-hero { margin-bottom: 1.75rem; }
+  .work-title { font-size: clamp(2.6rem, 10vw, 3.8rem); }
   .work-choices { grid-template-columns: 1fr; }
+  .work-tile { padding: 1.5rem; }
+  .work-tile:hover { transform: none; box-shadow: none; }
   .grid { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 600px) {
+  .work-page { padding: 1.5rem 0.75rem; }
+  .work-hero { margin-bottom: 1.25rem; }
+  .work-title { font-size: clamp(2rem, 13vw, 3rem); }
+  .work-sub { font-size: 0.95rem; }
+  .tile-inner h3 { font-size: 1.3rem; }
+  .tile-cta { width: 100%; padding: 0.85rem 1rem; }
+  .card img { height: 150px; }
+  .card-body { padding: 0.75rem 0.85rem; }
+  .work-grid { margin: 1.5rem 0; }
 }

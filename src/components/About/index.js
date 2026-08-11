@@ -29,7 +29,7 @@ import c14 from '../../assets/characterImages/14.png';
 const characterFrames = [c1,c2,c3,c4,c5,c6,c7,c8,c9,c10,c11,c12,c13,c14];
 
 const items = [
-  { id: 1, color: '#b4b4b4', label: 'Digital Art', image: digiArt },
+  { id: 1, color: '#b4b4b4', label: 'Drawing', image: digiArt },
   { id: 2,  label: 'Taking Photos', image: Photo },
   { id: 3,  label: 'Online Games', image: OnlineGames},
   { id: 4,  label: 'Sports', image: sport },
