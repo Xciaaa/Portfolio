@@ -1,0 +1,12 @@
+.hw-page { padding: 2.5rem; max-width: 1100px; margin: 0 auto; color: #fff; }
+.hw-hero { text-align: center; margin-bottom: 2rem; }
+.hw-hero h1 { font-family: 'Coolvetica'; font-size: clamp(2.4rem,6vw,3.6rem); margin: 0 0 .5rem; }
+.hw-hero p { color: rgba(255,255,255,0.7); margin: 0 0 1rem; }
+.back-link { color: #ff8da1; text-decoration: none; display: inline-block; margin-top: .5rem; }
+.hw-grid { display: grid; gap: 1rem; grid-template-columns: repeat(2,1fr); }
+.hw-card { background: rgba(255,255,255,0.02); padding: 1.25rem; border-radius: 12px; border: 1px solid rgba(255,255,255,0.04); }
+.hw-card h3 { margin: 0 0 .5rem; }
+.hw-card p { color: rgba(255,255,255,0.7); margin: 0 0 1rem; }
+.cta { background: #ff8da1; color: #000; border: none; padding: .5rem .9rem; border-radius: 999px; cursor: pointer; }
+
+@media (max-width: 860px) { .hw-grid { grid-template-columns: 1fr; } }

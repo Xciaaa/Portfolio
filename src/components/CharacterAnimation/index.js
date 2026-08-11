@@ -1,15 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react';
 import './index.scss';
 
-/**
- * CharacterAnimation
- * Props:
- * - src: image sprite sheet path
- * - cols: number of columns in the sheet
- * - rows: number of rows in the sheet
- * - fps: frames per second
- * - scale: scale multiplier for rendered frame size
- */
 const CharacterAnimation = ({
   src,
   cols = 5,
@@ -24,9 +15,6 @@ const CharacterAnimation = ({
   const frameRef = useRef(0);
   const rafRef = useRef(null);
   const [frameIndex, setFrameIndex] = useState(0);
-  const [prevIndex, setPrevIndex] = useState(null);
-  const [isFading, setIsFading] = useState(false);
-  const transitionTimer = useRef(null);
   const [frameSize, setFrameSize] = useState({ w: 0, h: 0 });
   const imagesRef = useRef([]);
 
@@ -46,7 +34,6 @@ const CharacterAnimation = ({
     };
     return () => {
       imagesRef.current = [];
-      if (transitionTimer.current) clearTimeout(transitionTimer.current);
     };
   }, [frames]);
 
@@ -74,18 +61,8 @@ const CharacterAnimation = ({
     const loop = (now) => {
       if (now - last >= interval) {
         const next = (frameRef.current + 1) % frameCount;
-        // set prev to current so we can crossfade
-        setPrevIndex(frameRef.current);
         frameRef.current = next;
         setFrameIndex(frameRef.current);
-        // begin fade
-        setIsFading(true);
-        // clear prev after transition
-        if (transitionTimer.current) clearTimeout(transitionTimer.current);
-        transitionTimer.current = setTimeout(() => {
-          setPrevIndex(null);
-          setIsFading(false);
-        }, transitionMs);
         last = now;
       }
       rafRef.current = requestAnimationFrame(loop);
@@ -94,7 +71,6 @@ const CharacterAnimation = ({
     rafRef.current = requestAnimationFrame(loop);
     return () => {
       cancelAnimationFrame(rafRef.current);
-      if (transitionTimer.current) clearTimeout(transitionTimer.current);
     };
   }, [loaded, cols, rows, fps, frames, transitionMs]);
 

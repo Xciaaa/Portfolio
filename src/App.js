@@ -5,8 +5,9 @@ import Home from './components/Home';
 import About from './components/About';
 import Contact from './components/Contact';
 import Work from './components/Work';
-
-
+import Hardware from './components/Work/Hardware';
+import Software from './components/Work/Software';
+import ProjectDetail from './components/Work/ProjectDetail';
 
 function App() {
   return (
@@ -17,6 +18,9 @@ function App() {
       <Route path="/about" element={<About />}/>
       <Route path="/Contact" element={<Contact />}/>
       <Route path="/Work" element={<Work />}/>
+      <Route path="/Work/hardware" element={<Hardware />}/>
+      <Route path="/Work/software" element={<Software />}/>
+      <Route path="/Work/project/:projectId" element={<ProjectDetail />}/>
     </Route>
    </Routes>
    </>
