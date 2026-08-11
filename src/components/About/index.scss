@@ -1,10 +1,8 @@
-/* ==========================================================================
-   Base Page & Layout
-   ========================================================================== */
+
 .about-page {
   width: 100%;
   margin-top: 100px;
-  padding-top: 5rem !important; /* Pushes content down so title clears top edge/nav */
+  padding-top: 5rem !important; 
   box-sizing: border-box;
   overflow: visible;
 }
@@ -19,10 +17,10 @@
   width: 100%;
   max-width: 1200px;
   margin: 0 auto;
-  padding: 10rem;
+  padding: 5rem;
   box-sizing: border-box;
-  gap: 1rem;
   position: relative;
+  margin-top: 50px;
 }
 
 .about-content {
@@ -36,7 +34,6 @@
  font-size: clamp(2.8rem, 5vw, 4rem);
     font-weight: 700;
     color: #ffd7ef; 
-    margin-top: 0;
     margin-bottom: 1.5rem;
     display: block !important;
     visibility: visible !important;
@@ -67,12 +64,12 @@
 }
 
 .about-animation {
-  order: 2 !important; /* Forces character card to sit on the right */
+  order: 2 !important; 
   flex: 1 1 45% !important;
   max-width: 420px !important;
   width: 100% !important;
   
-  /* Reset absolute offsets that were pulling it to the left */
+  
   position: relative !important;
   top: auto !important;
   left: auto !important;
@@ -196,7 +193,7 @@
 
 .about-gallery {
   display: flex;
-  gap: 24px;
+  gap: 30px;
   will-change: transform;
   min-width: max-content;
   padding-inline: calc(50vw - 160px);
@@ -337,9 +334,10 @@
 
   .flip-card {
     width: 100% !important;
-    height: 100% !important;
+    height: 180% !important;
     min-height: 380px !important;
     position: relative !important;
+    margin-top: -50px;
 
     &__face {
       position: absolute;
