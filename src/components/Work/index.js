@@ -2,7 +2,7 @@ import './index.scss';
 import { Link } from 'react-router-dom';
 import digiArt from '../../assets/images/spd.png';
 import Photo from '../../assets/images/imsl.png';
-import OnlineGames from '../../assets/images/VALORANT.webp';
+import Us from '../../assets/images/Us.png';
 import Quiz from '../../assets/images/quizz.png';
 
 const Work = () => {
@@ -93,7 +93,7 @@ const Work = () => {
           <div className="grid">
             <Link to="/Work/project/us-app" className="card">
               <div className="card-image-wrap">
-                <img src={OnlineGames} alt="Us-APP" loading="lazy" />
+                <img src={Us} alt="Us-APP" loading="lazy" />
                 <span className="card-badge">Mobile</span>
               </div>
               <div className="card-body">

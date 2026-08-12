@@ -1,6 +1,7 @@
 import digiArt from '../../assets/images/spd.png';
 import Photo from '../../assets/images/imsl.png';
 import Quiz from '../../assets/images/QuizIT.png';
+import Us from '../../assets/images/Us.png';
 
 const projects = [
   {
@@ -36,7 +37,7 @@ const projects = [
     title: 'Us: Couple App',
     category: 'software',
     subtitle: 'Flutter / Application',
-    image: Quiz,
+    image: Us,
     description: 'A dedicated interactive web application designed for couples to share memories, plans, and milestones.',
     highlights: [
       'Shared interactive dashboard for important dates and memories',

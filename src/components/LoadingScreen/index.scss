@@ -17,7 +17,7 @@
 .loading-logo {
   width: 120px;
   height: auto;
-  animation: spinLoader 2.5s cubic-bezier(0.45, 0.05, 0.55, 0.95) forwards;
+  animation: spinLoader 1.5s cubic-bezier(0.45, 0.25, 0.1, 0.95, ) forwards;
 }
 
 @keyframes spinLoader {
