@@ -15,10 +15,10 @@ const Navbar = () => {
 
   return (
    <div className={`nav-bar ${menuOpen ? 'mobile-open' : ''}`}>
-    <Link className='logo' to='/'>
-      <img src={LogoS} alt='Logo' />
-      <img className='sub-logo' src={LogoSubtitle} alt='Xia' />
-    </Link>
+     <Link className='logo' to='/'>
+       <img src={LogoS} alt='Logo' />
+       <img className='sub-logo' src={LogoSubtitle} alt='Xia' />
+     </Link>
     <button
       type='button'
       className='mobile-menu-toggle'

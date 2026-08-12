@@ -1,28 +1,194 @@
-.sw-page { 
-  padding: 2.5rem;
-  max-width: 1100px; 
-  margin: 0 auto; 
+.sw-page {
+  padding: 2.5rem 2rem 5rem;
+  padding-bottom: calc(5rem + env(safe-area-inset-bottom, 0px));
+  max-width: 1200px;
+  margin: 0 auto;
   color: #fff;
- }
-
-.sw-hero { 
-  text-align: center;
-  margin-bottom: 2rem; 
 }
-.sw-hero h1 { font-family: 'Coolvetica'; font-size: clamp(2.4rem,6vw,3.6rem); margin: 0 0 .5rem; }
-.sw-hero p { color: rgba(255,255,255,0.7); margin: 0 0 1rem; }
-.back-link { color: #ff8da1; text-decoration: none; display: inline-block; margin-top: .5rem; }
-.sw-grid { display: grid; gap: 1rem; grid-template-columns: repeat(2,1fr); }
-.sw-card { background: rgba(255,255,255,0.02); padding: 1.25rem; border-radius: 12px; border: 1px solid rgba(255,255,255,0.04); }
-.sw-card h3 { margin: 0 0 .5rem; }
-.sw-card p { color: rgba(255,255,255,0.7); margin: 0 0 1rem; }
-.cta { background: #ff8da1; color: #000; border: none; padding: .5rem .9rem; border-radius: 999px; cursor: pointer; }
 
-@media (max-width: 860px) { .sw-grid { grid-template-columns: 1fr; } }
+.sw-hero {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.sw-hero-content {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  gap: 2rem;
+}
+
+.sw-text {
+  flex: 1 1 55%;
+  text-align: left;
+}
+
+.sw-text h1 {
+  font-family: 'Coolvetica', sans-serif;
+  font-size: clamp(2.8rem, 5vw, 4rem);
+  color: #ffd7ef;
+  font-weight: 400;
+  line-height: 1.1;
+  margin: 0 0 1rem;
+}
+
+.sw-accent {
+  color: #ff8da1;
+}
+
+.sw-text p {
+  color: rgba(255,255,255,0.8);
+  font-size: 1rem;
+  line-height: 1.7;
+  margin: 0 0 1.25rem;
+  max-width: 520px;
+}
+
+.back-link {
+  color: #ff8da1;
+  text-decoration: none;
+  font-size: 0.95rem;
+  display: inline-block;
+  transition: opacity 0.2s ease;
+  min-height: 24px;
+
+  &:hover {
+    opacity: 0.75;
+  }
+}
+
+.sw-character {
+  flex: 1 1 45%;
+  max-width: 380px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.sw-character-img {
+  width: 100%;
+  height: auto;
+  display: block;
+  filter: grayscale(20%) contrast(1.05);
+}
+
+.sw-grid {
+  display: grid;
+  gap: 1.25rem;
+  grid-template-columns: repeat(2, 1fr);
+  margin-top: 2rem;
+}
+
+.sw-card {
+  background: rgba(255,255,255,0.02);
+  padding: 1.5rem;
+  border-radius: 14px;
+  border: 1px solid rgba(255,255,255,0.05);
+  transition: transform 0.28s ease, box-shadow 0.28s ease;
+
+  &:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 16px 36px rgba(0,0,0,0.35);
+  }
+}
+
+.sw-card-icon {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255,141,161,0.12);
+  border-radius: 10px;
+  margin-bottom: 1rem;
+
+  svg {
+    width: 22px;
+    height: 22px;
+    color: #ff8da1;
+  }
+}
+
+.sw-card h3 {
+  margin: 0 0 0.5rem;
+  font-size: 1.15rem;
+  color: #b4b4b4;
+}
+
+.sw-card p {
+  color: rgba(255,255,255,0.7);
+  margin: 0 0 1rem;
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+.sw-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 1.25rem;
+}
+
+.sw-tag {
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  color: rgba(255,255,255,0.75);
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(255,255,255,0.08);
+  padding: 0.3rem 0.7rem;
+  border-radius: 999px;
+}
+
+.cta {
+  background: #ff8da1;
+  color: #000;
+  border: none;
+  padding: 0.55rem 1.1rem;
+  border-radius: 999px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  font-weight: 600;
+  min-height: 44px;
+  transition: background 0.2s ease, transform 0.2s ease;
+
+  &:hover {
+    background: #ff7a9d;
+    transform: translateY(-1px);
+  }
+}
+
+@media (max-width: 900px) {
+  .sw-hero-content {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .sw-text {
+    text-align: center;
+  }
+
+  .sw-text p {
+    max-width: 100%;
+  }
+
+  .sw-character {
+    max-width: 260px;
+    width: 100%;
+  }
+}
+
+@media (max-width: 860px) {
+  .sw-grid { grid-template-columns: 1fr; }
+}
 
 @media (max-width: 600px) {
-  .sw-page { padding: 1.5rem 0.75rem 5rem; }
-  .sw-hero h1 { font-size: clamp(2rem, 11vw, 2.8rem); }
+  .sw-page {
+    padding: 1.5rem 0.75rem;
+    padding-bottom: calc(1.5rem + env(safe-area-inset-bottom, 0px));
+  }
+  .sw-text h1 { font-size: clamp(2rem, 11vw, 2.8rem); }
   .sw-grid { gap: 0.85rem; }
   .sw-card { padding: 1rem; }
 }

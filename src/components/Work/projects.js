@@ -1,6 +1,6 @@
 import digiArt from '../../assets/images/spd.png';
 import Photo from '../../assets/images/imsl.png';
-import OnlineGames from '../../assets/images/VALORANT.webp';
+import Quiz from '../../assets/images/QuizIT.png';
 
 const projects = [
   {
@@ -33,10 +33,10 @@ const projects = [
   },
   {
     id: 'us-app',
-    title: 'Us-APP',
+    title: 'Us: Couple App',
     category: 'software',
     subtitle: 'Flutter / Application',
-    image: OnlineGames,
+    image: Quiz,
     description: 'A dedicated interactive web application designed for couples to share memories, plans, and milestones.',
     highlights: [
       'Shared interactive dashboard for important dates and memories',
@@ -47,10 +47,10 @@ const projects = [
   },
   {
     id: 'quiz-app',
-    title: 'Interactive Quiz App',
+    title: 'QuizIT: Quiz Maker App',
     category: 'software',
-    subtitle: 'JavaScript / React UI',
-    image: digiArt,
+    subtitle: 'Android studio / Java',
+    image: Quiz,
     description: 'A dynamic, multi-topic quiz platform built with state management and live scoring metrics.',
     highlights: [
       'Dynamic question rendering and timer tracking',

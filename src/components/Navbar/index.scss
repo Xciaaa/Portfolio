@@ -19,6 +19,7 @@
   align-items: center;
   justify-content: space-between;
   padding: 0 32px;
+  padding-bottom: env(safe-area-inset-bottom, 0px);
   box-sizing: border-box;
 }
 
@@ -217,7 +218,7 @@
   .nav-bar nav {
     display: flex;
     position: absolute;
-    bottom: 60px;
+    bottom: calc(60px + env(safe-area-inset-bottom, 0px));
     right: 16px;
     left: auto;
     flex-direction: column;

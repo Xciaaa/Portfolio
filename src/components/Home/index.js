@@ -12,7 +12,7 @@ const Home = () => {
   const nameArray = [' ', 'X', 'i', 'a']
   const jobArray = ['C', 'o', 'm', 'p', 'u', 't', 'e', 'r', ' ', 'E', 'n', 'g', 'i', 'n', 'e', 'e', 'r']
 
- 
+
 
   return (
     <div className="home-container">
@@ -23,10 +23,12 @@ const Home = () => {
           <br />
           <span className={`${letterClass} _13`}>I</span>
           <span className={`${letterClass} _14`}>'m</span>
-         <AnimatedLetters letterClass={letterClass} 
-         strArray={nameArray} 
-         idx={15} />
-         <img src={LogoTitle} alt="Developer" className="logo-title" />
+         <span className="name-with-logo">
+           <AnimatedLetters letterClass={letterClass} 
+           strArray={nameArray} 
+           idx={15} />
+           <img src={LogoTitle} alt="Developer" className="logo-title" />
+         </span>
         <br />
         <AnimatedLetters letterClass={letterClass} 
          strArray={jobArray} 

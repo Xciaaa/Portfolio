@@ -71,6 +71,8 @@
   font-size: 1.05rem;
   transition: color 0.2s ease;
   word-break: break-all;
+  display: inline-block;
+  min-height: 24px;
 
   &:hover {
     color: #ff8da1;
@@ -122,6 +124,7 @@
 @media (max-width: 600px) {
   .contact-container {
     padding: 2.5rem 1rem;
+    padding-bottom: calc(2.5rem + env(safe-area-inset-bottom, 0px));
   }
 
   .contact-content h1 {
@@ -129,6 +132,12 @@
   }
 
   .contact-intro {
+    font-size: 1rem;
+    line-height: 1.7;
+  }
+
+  .contact-link,
+  .contact-value {
     font-size: 1rem;
   }
 }
