@@ -1,5 +1,4 @@
 import { useEffect, useRef, useState } from 'react';
-import { motion, useScroll, useTransform } from 'framer-motion';
 import AnimatedLetters from '../AnimatedLetters';
 import CharacterAnimation from '../CharacterAnimation';
 import './index.scss';
@@ -41,39 +40,17 @@ const items = [
 const About = () => {
   const [letterClass, setLetterClass] = useState('text-animate');
   const [flipped, setFlipped] = useState(false);
-  const [isMobile, setIsMobile] = useState(false);
   const containerRef = useRef(null);
 
-  // 1. Detect viewport size for responsive JS calculations
   useEffect(() => {
-    const handleResize = () => {
-      setIsMobile(window.innerWidth <= 600);
-    };
-
-    handleResize(); // Initial check
-    window.addEventListener('resize', handleResize);
-
     const timer = setTimeout(() => {
       setLetterClass('text-animate-hover');
     }, 4000);
 
     return () => {
-      window.removeEventListener('resize', handleResize);
       clearTimeout(timer);
     };
   }, []);
-
-  // 2. Adjust card sizing dynamically based on breakpoint
-  const itemWidth = isMobile ? 260 : 320;
-  const gap = isMobile ? 20 : 24;
-  const totalDistance = (items.length - 1) * (itemWidth + gap);
-
-  const { scrollYProgress } = useScroll({
-    target: containerRef,
-    offset: ['start start', 'end end'],
-  });
-
-  const desktopX = useTransform(scrollYProgress, [0, 1], [0, -totalDistance]);
 
   const handleFlip = () => setFlipped((prev) => !prev);
 
@@ -134,14 +111,10 @@ const About = () => {
       {/* Gallery Section */}
       <div ref={containerRef} className="about-scroll-container">
         <div className="about-scroll-sticky">
-          <motion.div 
-            className="about-gallery" 
-            /* On mobile, unset 'x' so SCSS CSS keyframe animation runs without inline style locks */
-            style={{ x: isMobile ? undefined : desktopX }}
-          >
-            {items.map((item) => (
+          <div className="about-gallery">
+            {[...items, ...items].map((item, index) => (
               <div
-                key={item.id}
+                key={item.id + '-' + index}
                 className="about-gallery-item"
                 style={{
                   backgroundImage: `url(${item.image})`,
@@ -154,7 +127,7 @@ const About = () => {
                 </div>
               </div>
             ))}
-          </motion.div>
+          </div>
         </div>
       </div>
 
