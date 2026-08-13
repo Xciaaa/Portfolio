@@ -145,9 +145,6 @@
   }
 }
 
-/* ==========================================================================
-   Hobbies & Outro Section
-   ========================================================================== */
 .impact {
   font-family: 'Coolvetica', sans-serif;
   color: #ff8da1;
@@ -176,7 +173,7 @@
   position: sticky;
   top: 0;
   height: 100vh;
-  width: 177%;
+  width: 185%;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -310,9 +307,6 @@
   100% { transform: translateY(0) rotateY(360deg); }
 }
 
-/* ==========================================================================
-   Responsive Breakpoints (Mobile & Tablet Stacking Fix)
-   ========================================================================== */
 @media (max-width: 900px) {
   .about-container {
     flex-direction: column !important;
@@ -334,7 +328,7 @@
   }
 
   .about-scroll-sticky {
-    width: 300%;
+    width: 100%;
   }
 }
 
@@ -372,7 +366,7 @@
   }
 
   .about-scroll-container {
-    height: 280vh;
+    height: auto;
   }
 }
 
@@ -388,22 +382,39 @@
   .about-content p {
     font-size: 1rem !important;
     line-height: 1.7;
-    
+  }
+
+  .about-gallery {
+    display: flex;
+    gap: 20px;
+    width: max-content;
+    will-change: transform;
+    animation: oscillateGallery 20s ease-in-out infinite;
+
+    &:hover,
+    &:active {
+      animation-play-state: paused;
+    }
   }
 
   .about-gallery-item {
     width: 260px;
-    height: 340px;
-    scroll-snap-align: center;
+    height: 240px;
+    flex-shrink: 0;
   }
 
-  .about-gallery {
-    gap: 20px;
+
+  .about-scroll-container {
+    overflow: hidden;
     width: 100%;
-    overflow-x: scroll;
-    scroll-snap-type: x mandatory;
-    -webkit-overflow-scrolling: touch;
-    padding-inline: 1.5rem;
+  }
+
+  .about-scroll-sticky {
+    position: relative;
+    top: auto;
+    height: auto;
+    width: 100%;
+    overflow: hidden;
   }
 
   .impact {
@@ -418,16 +429,15 @@
   .about-resume-sprite {
     max-width: 220px;
   }
+}
 
-  .about-scroll-container {
-    height: auto; 
+@keyframes oscillateGallery {
+  0%, 100% {
+
+    transform: translateX(calc(-180% + 480vw - 10rem)); 
   }
-
-  .about-scroll-sticky {
-    position: relative;
-    top: auto;
-    height: auto;
-    width: 100%; 
-    overflow: visible;
+  45%, 55% {
+  
+    transform: translateX(calc(-170% + 650vw - 10rem)); 
   }
 }

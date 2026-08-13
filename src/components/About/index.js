@@ -38,30 +38,42 @@ const items = [
   { id: 5, color: 'rgba(255, 255, 255, 0.15)', label: 'Reading', image: reading },
 ];
 
-const ITEM_WIDTH = 320;
-const GAP = 24;
-
 const About = () => {
   const [letterClass, setLetterClass] = useState('text-animate');
   const [flipped, setFlipped] = useState(false);
+  const [isMobile, setIsMobile] = useState(false);
   const containerRef = useRef(null);
 
+  // 1. Detect viewport size for responsive JS calculations
   useEffect(() => {
-    // Switches to 'text-animate-hover' after 4 seconds (matching your Home component behavior)
+    const handleResize = () => {
+      setIsMobile(window.innerWidth <= 600);
+    };
+
+    handleResize(); // Initial check
+    window.addEventListener('resize', handleResize);
+
     const timer = setTimeout(() => {
       setLetterClass('text-animate-hover');
     }, 4000);
 
-    return () => clearTimeout(timer);
+    return () => {
+      window.removeEventListener('resize', handleResize);
+      clearTimeout(timer);
+    };
   }, []);
+
+  // 2. Adjust card sizing dynamically based on breakpoint
+  const itemWidth = isMobile ? 260 : 320;
+  const gap = isMobile ? 20 : 24;
+  const totalDistance = (items.length - 1) * (itemWidth + gap);
 
   const { scrollYProgress } = useScroll({
     target: containerRef,
     offset: ['start start', 'end end'],
   });
 
-  const totalDistance = (items.length - 1) * (ITEM_WIDTH + GAP);
-  const x = useTransform(scrollYProgress, [0, 1], [0, -totalDistance]);
+  const desktopX = useTransform(scrollYProgress, [0, 1], [0, -totalDistance]);
 
   const handleFlip = () => setFlipped((prev) => !prev);
 
@@ -74,6 +86,7 @@ const About = () => {
 
   return (
     <div className="about-page">
+      {/* Hero Section */}
       <div className="about-container">
         <div className="about-content">
           <h1>
@@ -114,11 +127,18 @@ const About = () => {
         </div>
       </div>
 
+      {/* 3. Section Title placed OUTSIDE containerRef for perfect sticky timing */}
+      <hr className="divider" />
+      <h2 className="impact">Hobbies</h2>
+
+      {/* Gallery Section */}
       <div ref={containerRef} className="about-scroll-container">
-        <hr className="divider" />
-        <h2 className="impact">Hobbies</h2>
         <div className="about-scroll-sticky">
-          <motion.div className="about-gallery" style={{ x }}>
+          <motion.div 
+            className="about-gallery" 
+            /* On mobile, unset 'x' so SCSS CSS keyframe animation runs without inline style locks */
+            style={{ x: isMobile ? undefined : desktopX }}
+          >
             {items.map((item) => (
               <div
                 key={item.id}
@@ -138,6 +158,7 @@ const About = () => {
         </div>
       </div>
 
+      {/* Outro / Resume Section */}
       <section className="about-scroll-outro">
         <div className="about-scroll-finish">
           <CharacterAnimation
