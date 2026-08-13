@@ -84,7 +84,11 @@ const About = () => {
             />
           </h1>
           <p>
-            I'm Jerricson Garcia, a computer engineer who loves bringing digital code into the physical world. I operate right at the intersection of hardware and software, whether that means wiring up microcontrollers, writing backend logic, or building clean web interfaces to control it all. I take a hands-on, end-to-end approach to engineering: taking an idea from raw schematics and low-level code to a smooth, fully functional system that just works. I’m always eager to solve complex problems and build tech that makes a tangible impact.
+            I'm Jerricson Garcia, a computer engineer who loves bringing digital code into the physical world. I operate right at the intersection of hardware and software, whether that means wiring up microcontrollers, writing backend logic, or building clean web interfaces to control it all. 
+          </p>
+          <br />
+          <p>
+            I take a hands-on, end-to-end approach to engineering: taking an idea from raw schematics and low-level code to a smooth, fully functional system that just works. I’m always eager to solve complex problems and build tech that makes a tangible impact.
           </p>
         </div>
 
