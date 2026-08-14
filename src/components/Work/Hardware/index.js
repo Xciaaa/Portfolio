@@ -22,7 +22,7 @@ const Hardware = () => {
       </header>
 
       <main className="hw-grid">
-        <article className="hw-card">
+        <Link to="/Work/project/pill-dispenser" className="hw-card">
           <div className="hw-card-icon">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
               <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" />
@@ -35,14 +35,13 @@ const Hardware = () => {
             <span className="hw-tag">PCB</span>
             <span className="hw-tag">Firmware</span>
           </div>
-          <button className="cta">View Schematics</button>
-        </article>
+          <span className="cta">View Schematics</span>
+        </Link>
 
-        <article className="hw-card">
+        <Link to="/Work/project/ims-l" className="hw-card">
           <div className="hw-card-icon">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
-              <rect x="2" y="6" width="20" height="12" rx="2" />
-              <path d="M6 10h.01M6 14h.01" />
+              <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" />
             </svg>
           </div>
           <h3>IMS-L: Inventory Management System for Laptops</h3>
@@ -51,8 +50,40 @@ const Hardware = () => {
             <span className="hw-tag">Kiosk</span>
             <span className="hw-tag">Inventory</span>
           </div>
-          <button className="cta">View Details</button>
-        </article>
+          <span className="cta">View Schematics</span>
+        </Link>
+
+        <Link to="/Work/project/RC" className="hw-card">
+          <div className="hw-card-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
+              <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" />
+            </svg>
+          </div>
+          <h3>Remote Controlled Car</h3>
+          <p>Custom sensor modules, enclosure design, and production-ready firmware for harsh environments.</p>
+          <div className="hw-tags">
+            <span className="hw-tag">ESP32</span>
+            <span className="hw-tag">Bluetooth</span>
+            <span className="hw-tag">Firmware</span>
+          </div>
+          <span className="cta">View Schematics</span>
+        </Link>
+
+        <Link to="/Work/project/smartsoil" className="hw-card">
+          <div className="hw-card-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
+              <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" />
+            </svg>
+          </div>
+          <h3>SmartSoil: Eggplant Monitoring System</h3>
+          <p>Rugged gateway engineering and connectivity stacks for reliable IoT deployment.</p>
+          <div className="hw-tags">
+            <span className="hw-tag">IoT</span>
+            <span className="hw-tag">Connectivity</span>
+            <span className="hw-tag">PCB</span>
+          </div>
+          <span className="cta">View Schematics</span>
+        </Link>
       </main>
     </div>
   );
