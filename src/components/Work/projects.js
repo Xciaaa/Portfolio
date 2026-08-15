@@ -1,7 +1,7 @@
 import digiArt from '../../assets/images/spd.png';
 import Photo from '../../assets/images/imsl.png';
 import Quiz from '../../assets/images/QuizIT.png';
-import Us from '../../assets/images/Us.png';
+import Us from '../../assets/images/UsApp.png';
 import RC from '../../assets/images/RC.png';
 import egg from '../../assets/images/eggie.png';
 

@@ -1,7 +1,43 @@
 import './index.scss';
+import { useState } from 'react';
 import { Link } from 'react-router-dom';
+import GalleryModal from '../GalleryModal';
+import RC from '../../../assets/images/RC.png';
+import egg from '../../../assets/images/eggie.png';
+import digitalArt from '../../../assets/images/digitalArt.png';
+import Illustration from '../../../assets/images/Illustration.png';
+import BDPill from '../../../assets/images/BDPill.jpg';
+import PMTPill from '../../../assets/images/PMTPill.png';
+import PDPill from '../../../assets/images/PDPill.png';
+import HPcon from '../../../assets/images/HPCon.png';
+import IMSDIG from '../../../assets/images/IMSDIG.png';
+import ACDes from '../../../assets/images/ACDes.png';
+
+
+const schematics = {
+  'pill-dispenser': [BDPill, PMTPill, PDPill],
+  'ims-l': [ACDes, IMSDIG, HPcon],
+  'RC': [RC, digitalArt, Illustration],
+  'smartsoil': [egg, digitalArt, Illustration],
+};
 
 const Hardware = () => {
+  const [galleryOpen, setGalleryOpen] = useState(false);
+  const [galleryImages, setGalleryImages] = useState([]);
+  const [galleryTitle, setGalleryTitle] = useState('');
+
+  const openGallery = (projectId, title) => {
+    setGalleryTitle(title);
+    setGalleryImages(schematics[projectId] || []);
+    setGalleryOpen(true);
+  };
+
+  const handleSchematicClick = (e, projectId, title) => {
+    e.preventDefault();
+    e.stopPropagation();
+    openGallery(projectId, title);
+  };
+
   return (
     <div className="hw-page">
       <header className="hw-hero">
@@ -35,7 +71,7 @@ const Hardware = () => {
             <span className="hw-tag">PCB</span>
             <span className="hw-tag">Firmware</span>
           </div>
-          <span className="cta">View Schematics</span>
+          <button type="button" className="cta" onClick={(e) => handleSchematicClick(e, 'pill-dispenser', 'Smart Medical Pill Dispenser')}>View Schematics</button>
         </Link>
 
         <Link to="/Work/project/ims-l" className="hw-card">
@@ -50,7 +86,7 @@ const Hardware = () => {
             <span className="hw-tag">Kiosk</span>
             <span className="hw-tag">Inventory</span>
           </div>
-          <span className="cta">View Schematics</span>
+          <button type="button" className="cta" onClick={(e) => handleSchematicClick(e, 'ims-l', 'IMS-L: Laboratory Management System')}>View Schematics</button>
         </Link>
 
         <Link to="/Work/project/RC" className="hw-card">
@@ -66,7 +102,7 @@ const Hardware = () => {
             <span className="hw-tag">Bluetooth</span>
             <span className="hw-tag">Firmware</span>
           </div>
-          <span className="cta">View Schematics</span>
+          <button type="button" className="cta" onClick={(e) => handleSchematicClick(e, 'RC', 'ESP32 Remote Controlled Car')}>View Schematics</button>
         </Link>
 
         <Link to="/Work/project/smartsoil" className="hw-card">
@@ -82,9 +118,16 @@ const Hardware = () => {
             <span className="hw-tag">Connectivity</span>
             <span className="hw-tag">PCB</span>
           </div>
-          <span className="cta">View Schematics</span>
+          <button type="button" className="cta" onClick={(e) => handleSchematicClick(e, 'smartsoil', 'SmartSoil: Eggplant Monitoring System')}>View Schematics</button>
         </Link>
       </main>
+
+      <GalleryModal
+        isOpen={galleryOpen}
+        onClose={() => setGalleryOpen(false)}
+        images={galleryImages}
+        title={galleryTitle}
+      />
     </div>
   );
 };

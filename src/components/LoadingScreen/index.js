@@ -7,7 +7,7 @@ const LoadingScreen = ({ onFinish }) => {
   const [count, setCount] = useState(1);
 
   useEffect(() => {
-    const duration = 2500;
+    const duration = 5400;
     const startTime = performance.now();
     let rafId;
 
