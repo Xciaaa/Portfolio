@@ -71,7 +71,7 @@ const Hardware = () => {
             <span className="hw-tag">PCB</span>
             <span className="hw-tag">Firmware</span>
           </div>
-          <button type="button" className="cta" onClick={(e) => handleSchematicClick(e, 'pill-dispenser', 'Smart Medical Pill Dispenser')}>View Schematics</button>
+          <button type="button" className="cta" onClick={(e) => handleSchematicClick(e, 'pill-dispenser', 'Smart Medical Pill Dispenser')}>View Diagrams</button>
         </Link>
 
         <Link to="/Work/project/ims-l" className="hw-card">
@@ -86,7 +86,7 @@ const Hardware = () => {
             <span className="hw-tag">Kiosk</span>
             <span className="hw-tag">Inventory</span>
           </div>
-          <button type="button" className="cta" onClick={(e) => handleSchematicClick(e, 'ims-l', 'IMS-L: Laboratory Management System')}>View Schematics</button>
+          <button type="button" className="cta" onClick={(e) => handleSchematicClick(e, 'ims-l', 'IMS-L: Laboratory Management System')}>View Diagrams</button>
         </Link>
 
         <Link to="/Work/project/RC" className="hw-card">
@@ -102,7 +102,7 @@ const Hardware = () => {
             <span className="hw-tag">Bluetooth</span>
             <span className="hw-tag">Firmware</span>
           </div>
-          <button type="button" className="cta" onClick={(e) => handleSchematicClick(e, 'RC', 'ESP32 Remote Controlled Car')}>View Schematics</button>
+          <button type="button" className="cta" onClick={(e) => handleSchematicClick(e, 'RC', 'ESP32 Remote Controlled Car')}>View Diagrams</button>
         </Link>
 
         <Link to="/Work/project/smartsoil" className="hw-card">
@@ -118,7 +118,7 @@ const Hardware = () => {
             <span className="hw-tag">Connectivity</span>
             <span className="hw-tag">PCB</span>
           </div>
-          <button type="button" className="cta" onClick={(e) => handleSchematicClick(e, 'smartsoil', 'SmartSoil: Eggplant Monitoring System')}>View Schematics</button>
+          <button type="button" className="cta" onClick={(e) => handleSchematicClick(e, 'smartsoil', 'SmartSoil: Eggplant Monitoring System')}>View Diagrams</button>
         </Link>
       </main>
 
