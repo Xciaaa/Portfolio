@@ -12,13 +12,15 @@ import PDPill from '../../../assets/images/PDPill.png';
 import HPcon from '../../../assets/images/HPCon.png';
 import IMSDIG from '../../../assets/images/IMSDIG.png';
 import ACDes from '../../../assets/images/ACDes.png';
+import PDSe from '../../../assets/images/PDSe.png';
+import BDSe from '../../../assets/images/BDSe.png';
 
 
 const schematics = {
   'pill-dispenser': [BDPill, PMTPill, PDPill],
   'ims-l': [ACDes, IMSDIG, HPcon],
   'RC': [RC, digitalArt, Illustration],
-  'smartsoil': [egg, digitalArt, Illustration],
+  'smartsoil': [PDSe, BDSe],
 };
 
 const Hardware = () => {
