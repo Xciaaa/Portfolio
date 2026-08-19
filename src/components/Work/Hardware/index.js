@@ -3,7 +3,6 @@ import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import GalleryModal from '../GalleryModal';
 import RC from '../../../assets/images/RC.png';
-import egg from '../../../assets/images/eggie.png';
 import digitalArt from '../../../assets/images/digitalArt.png';
 import Illustration from '../../../assets/images/Illustration.png';
 import BDPill from '../../../assets/images/BDPill.jpg';
