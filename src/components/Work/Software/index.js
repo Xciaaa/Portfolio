@@ -54,7 +54,7 @@ const Software = () => {
             <span className="sw-tag">Firebase</span>
             <span className="sw-tag">Mobile</span>
           </div>
-          <span className="cta">View Demo</span>
+          <span className="cta">View Project</span>
         </Link>
 
         <Link to="/Work/project/netbeans" className="sw-card">

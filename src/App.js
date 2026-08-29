@@ -10,11 +10,13 @@ import Hardware from './components/Work/Hardware';
 import Software from './components/Work/Software';
 import ProjectDetail from './components/Work/ProjectDetail';
 import LoadingScreen from './components/LoadingScreen';
+import { Analytics } from "@vercel/analytics/react";
 
 function App() {
   const [loading, setLoading] = useState(true);
 
   return (
+    <div className="App">
     <>
       {loading && <LoadingScreen onFinish={() => setLoading(false)} />}
       <Routes>
@@ -28,7 +30,9 @@ function App() {
          <Route path="/Work/project/:projectId" element={<ProjectDetail />}/>
        </Route>
       </Routes>
+      <Analytics />
     </>
+    </div>
    );
  }
 
