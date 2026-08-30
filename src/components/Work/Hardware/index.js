@@ -2,9 +2,6 @@ import './index.scss';
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import GalleryModal from '../GalleryModal';
-import RC from '../../../assets/images/RC.png';
-import digitalArt from '../../../assets/images/digitalArt.png';
-import Illustration from '../../../assets/images/Illustration.png';
 import BDPill from '../../../assets/images/BDPill.jpg';
 import PMTPill from '../../../assets/images/PMTPill.png';
 import PDPill from '../../../assets/images/PDPill.png';
@@ -13,12 +10,12 @@ import IMSDIG from '../../../assets/images/IMSDIG.png';
 import ACDes from '../../../assets/images/ACDes.png';
 import PDSe from '../../../assets/images/PDSe.png';
 import BDSe from '../../../assets/images/BDSe.png';
-
+import RCD from '../../../assets/images/RCD.png';
 
 const schematics = {
   'pill-dispenser': [BDPill, PMTPill, PDPill],
   'ims-l': [ACDes, IMSDIG, HPcon],
-  'RC': [RC, digitalArt, Illustration],
+  'RC': [RCD],
   'smartsoil': [PDSe, BDSe],
 };
 
