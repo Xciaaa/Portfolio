@@ -4,6 +4,7 @@ import Quiz from '../../assets/images/QuizIT.png';
 import Us from '../../assets/images/UsApp.png';
 import RC from '../../assets/images/RC.png';
 import egg from '../../assets/images/eggie.png';
+import STH from '../../assets/images/STH.png';
 
 const projects = [
   {
@@ -105,7 +106,24 @@ const projects = [
     ],
     details: 'Engineered a full Java desktop application built using the NetBeans IDE. Designed custom file I/O routines to handle data storage, retrieval, and state management using structured .txt files, eliminating external database dependencies while ensuring data integrity.',
   },
+
+  {
+    id: 'storyhub',
+    title: 'LoreCanvas: Storyhub Web Novel Platform',
+    category: 'software', 
+    subtitle: 'Full-Stack / AI-Powered Development',
+    image: STH,
+    description: 'Dynamic platform built for fiction writers to draft, organize, and publish multi-chapter web novels.',
+    highlights: [
+      'Multi-chapter web novel drafting and publishing system',
+      'Structured organization tools for story outlines and plots',
+      'Character creation and management modules for authors',
+    ],
+    details: 'Developed Storyhub, a dynamic platform built for fiction writers to draft, organize, and publish multi-chapter web novels. Engineered robust data workflows to handle story outlines, character creation, and chapter management seamlessly.',
+    demoUrl: 'https://story-hub-hmyo.vercel.app/',
+  },
   
 ];
+
 
 export default projects;

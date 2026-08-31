@@ -39,6 +39,9 @@ const ProjectDetail = () => {
           {project.highlights.map((line) => (
             <li key={line}>{line}</li>
           ))}
+          {project.demoUrl && (
+          <a href={project.demoUrl} target='_blank' rel='noopener noreferrer' className='cta'>View Demo</a>
+          )}
         </ul>
       </section>
     </div>

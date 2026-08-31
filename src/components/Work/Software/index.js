@@ -43,7 +43,9 @@ const Software = () => {
         <Link to="/Work/project/quiz-app" className="sw-card">
           <div className="sw-card-icon">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
-              <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" />
+              <rect x="2" y="3" width="20" height="14" rx="2" ry="2" />
+              <line x1="8" y1="21" x2="16" y2="21" />
+              <line x1="12" y1="17" x2="12" y2="21" />
             </svg>
           </div>
           <h3>QuizIT: Quiz Maker App</h3>
@@ -73,6 +75,24 @@ const Software = () => {
             <span className="sw-tag">Textfiles Database</span>
           </div>
           <span className="cta">View Project</span>
+        </Link>
+
+        <Link to="/Work/project/storyhub" className="sw-card">
+          <div className="sw-card-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
+              <rect x="2" y="3" width="20" height="14" rx="2" ry="2" />
+              <line x1="8" y1="21" x2="16" y2="21" />
+              <line x1="12" y1="17" x2="12" y2="21" />
+            </svg>
+          </div>
+          <h3>LoreCanvas: Storyhub Web Novel Platform</h3>
+          <p>Dynamic platform built for fiction writers to draft, organize, and publish multi-chapter web novels, vibe-coded with modern AI tools.</p>
+          <div className="sw-tags">
+            <span className="sw-tag">Full-Stack</span>
+            <span className="sw-tag">Web Development</span>
+            <span className="sw-tag">AI-Assisted</span>
+          </div>
+          <Link to="https://story-hub-hmyo.vercel.app/" target="_blank" rel="noopener noreferrer" className="cta" onClick={(e) => e.stopPropagation()}>View Demo</Link>
         </Link>
 
         

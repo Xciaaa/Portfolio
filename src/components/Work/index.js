@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import digiArt from '../../assets/images/spd.png';
 import Photo from '../../assets/images/imsl.png';
 import Us from '../../assets/images/Us.png';
-import Quiz from '../../assets/images/quizz.png';
+import STH from '../../assets/images/STH.png';
 
 const Work = () => {
   return (
@@ -101,14 +101,15 @@ const Work = () => {
                 <small>Flutter / Dart / Application</small>
               </div>
             </Link>
-            <Link to="/Work/project/quiz-app" className="card">
+
+            <Link to="/Work/project/storyhub" className="card">
               <div className="card-image-wrap">
-                <img src={Quiz} alt="Quiz Maker App" loading="lazy" />
-                <span className="card-badge">MOBILE</span>
+                <img src={STH} alt="QStoryhub Web Novel Platform" loading="lazy" />
+                <span className="card-badge">WEB APP</span>
               </div>
               <div className="card-body">
-                <h4>QuizIT: Quiz Maker App</h4>
-                <small>Java / Android Studio</small>
+                <h4>LoreCanvas: Storyhub Web Novel Platform</h4>
+                <small>Full-Stack / AI-Assisted</small>
               </div>
             </Link>
           </div>
