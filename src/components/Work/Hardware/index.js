@@ -5,6 +5,10 @@ import GalleryModal from '../GalleryModal';
 import BDPill from '../../../assets/images/BDPill.jpg';
 import PMTPill from '../../../assets/images/PMTPill.png';
 import PDPill from '../../../assets/images/PDPill.png';
+import PillSchem from '../../../assets/images/PillSchem.png';
+import Or from '../../../assets/images/ORing.png';
+import Batt from '../../../assets/images/BatterySys.png';
+import MCUP from '../../../assets/images/MCUPill.png';
 import HPcon from '../../../assets/images/HPCon.png';
 import IMSDIG from '../../../assets/images/IMSDIG.png';
 import ACDes from '../../../assets/images/ACDes.png';
@@ -13,7 +17,7 @@ import BDSe from '../../../assets/images/BDSe.png';
 import RCD from '../../../assets/images/RCD.png';
 
 const schematics = {
-  'pill-dispenser': [BDPill, PMTPill, PDPill],
+  'pill-dispenser': [BDPill, PMTPill, PDPill, PillSchem, MCUP, Or, Batt],
   'ims-l': [ACDes, IMSDIG, HPcon],
   'RC': [RCD],
   'smartsoil': [PDSe, BDSe],
