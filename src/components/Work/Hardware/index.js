@@ -2,7 +2,7 @@ import './index.scss';
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import GalleryModal from '../GalleryModal';
-import BDPill from '../../../assets/images/BDPill.jpg';
+import BDPill from '../../../assets/images/BDPill.png';
 import PMTPill from '../../../assets/images/PMTPill.png';
 import PDPill from '../../../assets/images/PDPill.png';
 import PillSchem from '../../../assets/images/PillSchem.png';
